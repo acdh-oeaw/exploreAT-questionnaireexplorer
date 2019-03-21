@@ -132,6 +132,10 @@ USE_TZ = True
 # STATICFILES_DIRS = [
 #     os.path.abspath(os.path.join(BASE_DIR, "static")),
 # ]
+#
+# ACDH Docker container dboe2-questionnaireexplorer requiers STATIC_ROOT without /questAPI/ in path
+# STATIC_ROOT=os.path.join(BASE_DIR, 'static')
+#
 STATIC_ROOT=os.path.join(BASE_DIR, '/questAPI/static')
 print("static_root", STATIC_ROOT)
 # STATIC_ROOT = 'staticfiles'
