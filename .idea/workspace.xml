@@ -16,8 +16,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/questAPI/questions/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="55">
-              <caret line="598" column="25" lean-forward="true" selection-start-line="598" selection-start-column="25" selection-end-line="598" selection-end-column="25" />
+            <state relative-caret-position="-1028">
+              <caret line="604" column="31" lean-forward="true" selection-start-line="604" selection-start-column="31" selection-end-line="604" selection-end-column="31" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -37,7 +37,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="1504" />
     <option name="y" value="23" />
     <option name="width" value="1237" />
@@ -146,7 +146,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1504" y="23" width="1237" height="745" extended-state="1" />
+    <frame x="1504" y="23" width="1237" height="745" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24937238" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -179,8 +179,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/questAPI/questions/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="598" column="25" lean-forward="true" selection-start-line="598" selection-start-column="25" selection-end-line="598" selection-end-column="25" />
+        <state relative-caret-position="-1028">
+          <caret line="604" column="31" lean-forward="true" selection-start-line="604" selection-start-column="31" selection-end-line="604" selection-end-column="31" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
