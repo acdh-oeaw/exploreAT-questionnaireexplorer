@@ -131,9 +131,9 @@ class QuestionnaireView(APIView):
         sparql.setQuery("""
 
                     SELECT *
-                    From named <http://exploreat.adaptcentre.ie/Questionnaire_graph>
+                    From named <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Questionnaire_graph>
                     WHERE {
-                    Graph <http://exploreat.adaptcentre.ie/Questionnaire_graph> {?s ?p ?o}
+                    Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Questionnaire_graph> {?s ?p ?o}
                     } Limit 100
                  """)
         sparql.setReturnFormat(JSON)
@@ -148,9 +148,9 @@ class QuestionView(APIView):
         sparql.setQuery("""
 
                     SELECT *
-                    From named <http://exploreat.adaptcentre.ie/Question_graph>
+                    From named <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Question_graph>
                     WHERE {
-                    Graph  <http://exploreat.adaptcentre.ie/Question_graph> {?s ?p ?o}
+                    Graph  <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Question_graph> {?s ?p ?o}
                     }
                  """)
         sparql.setReturnFormat(JSON)
@@ -164,9 +164,9 @@ class LemmaView(APIView):
         sparql.setQuery("""
 
                     SELECT *
-                    From named <http://exploreat.adaptcentre.ie/Lemma_graph>
+                    From named <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Lemma_graph>
                     WHERE {
-                    Graph <http://exploreat.adaptcentre.ie/Lemma_graph> {?s ?p ?o}
+                    Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Lemma_graph> {?s ?p ?o}
                     } 
                  """)
         sparql.setReturnFormat(JSON)
@@ -180,9 +180,9 @@ class SourceView(APIView):
         sparql.setQuery("""
 
                     SELECT *
-                    From named <http://exploreat.adaptcentre.ie/Source_graph>
+                    From named <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Source_graph>
                     WHERE {
-                    Graph <http://exploreat.adaptcentre.ie/Source_graph> {?s ?p ?o}
+                    Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Source_graph> {?s ?p ?o}
                     }
                  """)
         sparql.setReturnFormat(JSON)
@@ -196,9 +196,9 @@ class PaperSlipView(APIView):
         sparql.setQuery("""
 
                     SELECT *
-                    From named <http://exploreat.adaptcentre.ie/PaperSlip_graph>
+                    From named <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//PaperSlip_graph>
                     WHERE {
-                    Graph <http://exploreat.adaptcentre.ie/PaperSlip_graph> {?s ?p ?o}
+                    Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//PaperSlip_graph> {?s ?p ?o}
                     } 
                  """)
         sparql.setReturnFormat(JSON)
@@ -212,9 +212,9 @@ class PaperSlipRecordView(APIView):
         sparql.setQuery("""
 
                     SELECT *
-                    From named <http://exploreat.adaptcentre.ie/PaperSlipRecord_graph>
+                    From named <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//PaperSlipRecord_graph>
                     WHERE {
-                    Graph <http://exploreat.adaptcentre.ie/PaperSlipRecord_graph> {?s ?p ?o}
+                    Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//PaperSlipRecord_graph> {?s ?p ?o}
                     }
                  """)
         sparql.setReturnFormat(JSON)
@@ -228,9 +228,9 @@ class MultimediaView(APIView):
         sparql.setQuery("""
 
                     SELECT *
-                    From named <http://exploreat.adaptcentre.ie/Multimedia_graph>
+                    From named <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Multimedia_graph>
                     WHERE {
-                    Graph <http://exploreat.adaptcentre.ie/Multimedia_graph> {?s ?p ?o}
+                    Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Multimedia_graph> {?s ?p ?o}
                     }
                  """)
         sparql.setReturnFormat(JSON)
@@ -244,9 +244,9 @@ class PersonView(APIView):
         sparql.setQuery("""
 
                     SELECT *
-                    From named <http://exploreat.adaptcentre.ie/Person_graph>
+                    From named <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Person_graph>
                     WHERE {
-                    Graph <http://exploreat.adaptcentre.ie/Person_graph> {?s ?p ?o}
+                    Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Person_graph> {?s ?p ?o}
                     } 
                  """)
         sparql.setReturnFormat(JSON)
@@ -256,14 +256,14 @@ class PersonView(APIView):
 class DetailedQuestionnaireView(APIView):
     def get(self, request,pk):
         #the query will strip the questionnaire number and replace http://localhost/oldca/fragebogen/1 in the query
-        subj = "<http://exploreat.adaptcentre.ie/Questionnaire/" + pk + ">"
+        subj = "<https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Questionnaire/" + pk + ">"
         sparql = SPARQLWrapper(dataset)
         sparql.setQuery("""
 
                         SELECT *
-                        From named <http://exploreat.adaptcentre.ie/Questionnaire_graph>
+                        From named <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Questionnaire_graph>
                         WHERE {
-                        Graph <http://exploreat.adaptcentre.ie/Questionnaire_graph> {""" +subj + """ ?p ?o}
+                        Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Questionnaire_graph> {""" +subj + """ ?p ?o}
                         } 
                      """)
         sparql.setReturnFormat(JSON)
@@ -273,14 +273,14 @@ class DetailedQuestionnaireView(APIView):
 class DetailedQuestionView(APIView):
     def get(self, request,pk):
         # the query will strip the questionnaire number and replace http://localhost/oldca/fragebogen/1 in the query
-        subj="<http://exploreat.adaptcentre.ie/Question/" +pk +">"
+        subj="<https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Question/" +pk +">"
         sparql = SPARQLWrapper(dataset)
         sparql.setQuery("""
 
                         SELECT *
-                        From named <http://exploreat.adaptcentre.ie/Question_graph>
+                        From named <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Question_graph>
                         WHERE {
-                        Graph <http://exploreat.adaptcentre.ie/Question_graph> {""" +subj + """ ?p ?o}
+                        Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Question_graph> {""" +subj + """ ?p ?o}
                         } 
                      """)
         sparql.setReturnFormat(JSON)
@@ -296,14 +296,14 @@ class DetailedQuestionView(APIView):
 class DetailedPaperSlipRecordView(APIView):
     def get(self, request,pk):
         # the query will strip the questionnaire number and replace http://localhost/oldca/fragebogen/1 in the query
-        subj="<http://exploreat.adaptcentre.ie/PaperSlipRecord/" +pk +">"
+        subj="<https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//PaperSlipRecord/" +pk +">"
         sparql = SPARQLWrapper(dataset)
         sparql.setQuery("""
 
                         SELECT *
-                        From named <http://exploreat.adaptcentre.ie/PaperSlipRecord_graph>
+                        From named <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//PaperSlipRecord_graph>
                         WHERE {
-                        Graph <http://exploreat.adaptcentre.ie/PaperSlipRecord_graph> {""" +subj + """ ?p ?o}
+                        Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//PaperSlipRecord_graph> {""" +subj + """ ?p ?o}
                         } 
                      """)
         sparql.setReturnFormat(JSON)
@@ -313,14 +313,14 @@ class DetailedPaperSlipRecordView(APIView):
 class DetailedLemmaView(APIView):
     def get(self, request,pk):
         # the query will strip the questionnaire number and replace http://localhost/oldca/fragebogen/1 in the query
-        subj="<http://exploreat.adaptcentre.ie/Lemma/" +pk +">"
+        subj="<https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Lemma/" +pk +">"
         sparql = SPARQLWrapper(dataset)
         sparql.setQuery("""
 
                         SELECT *
-                        From named <http://exploreat.adaptcentre.ie/Lemma_graph>
+                        From named <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Lemma_graph>
                         WHERE {
-                        Graph <http://exploreat.adaptcentre.ie/Lemma_graph> {""" +subj + """ ?p ?o}
+                        Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Lemma_graph> {""" +subj + """ ?p ?o}
                         } 
                      """)
         sparql.setReturnFormat(JSON)
@@ -331,14 +331,14 @@ class DetailedLemmaView(APIView):
 class DetailedSourceView(APIView):
     def get(self, request,pk):
         # the query will strip the questionnaire number and replace http://localhost/oldca/fragebogen/1 in the query
-        subj="<http://exploreat.adaptcentre.ie/Source/" +pk +">"
+        subj="<https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Source/" +pk +">"
         sparql = SPARQLWrapper(dataset)
         sparql.setQuery("""
 
                         SELECT *
-                        From named <http://exploreat.adaptcentre.ie/Source_graph>
+                        From named <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Source_graph>
                         WHERE {
-                        Graph <http://exploreat.adaptcentre.ie/Source_graph> {""" +subj + """ ?p ?o}
+                        Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Source_graph> {""" +subj + """ ?p ?o}
                         } 
                      """)
         sparql.setReturnFormat(JSON)
@@ -348,14 +348,14 @@ class DetailedSourceView(APIView):
 class DetailedPaperSlipView(APIView):
     def get(self, request,pk):
         # the query will strip the questionnaire number and replace http://localhost/oldca/fragebogen/1 in the query
-        subj="<http://exploreat.adaptcentre.ie/PaperSlip/" +pk +">"
+        subj="<https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//PaperSlip/" +pk +">"
         sparql = SPARQLWrapper(dataset)
         sparql.setQuery("""
 
                         SELECT *
-                        From named <http://exploreat.adaptcentre.ie/PaperSlip_graph>
+                        From named <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//PaperSlip_graph>
                         WHERE {
-                        Graph <http://exploreat.adaptcentre.ie/PaperSlip_graph> {""" +subj + """ ?p ?o}
+                        Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//PaperSlip_graph> {""" +subj + """ ?p ?o}
                         } 
                      """)
         sparql.setReturnFormat(JSON)
@@ -366,14 +366,14 @@ class DetailedPaperSlipView(APIView):
 class DetailedMultimediaView(APIView):
     def get(self, request,pk):
         # the query will strip the questionnaire number and replace http://localhost/oldca/fragebogen/1 in the query
-        subj="<http://exploreat.adaptcentre.ie/Multimedia/" +pk +">"
+        subj="<https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Multimedia/" +pk +">"
         sparql = SPARQLWrapper(dataset)
         sparql.setQuery("""
 
                         SELECT *
-                        From named <http://exploreat.adaptcentre.ie/Multimedia_graph>
+                        From named <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Multimedia_graph>
                         WHERE {
-                        Graph <http://exploreat.adaptcentre.ie/Multimedia_graph> {""" +subj + """ ?p ?o}
+                        Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Multimedia_graph> {""" +subj + """ ?p ?o}
                         } 
                      """)
         sparql.setReturnFormat(JSON)
@@ -383,14 +383,14 @@ class DetailedMultimediaView(APIView):
 class DetailedPersonView(APIView):
     def get(self, request,pk):
         # the query will strip the questionnaire number and replace http://localhost/oldca/fragebogen/1 in the query
-        subj="<http://exploreat.adaptcentre.ie/Person/" +pk +">"
+        subj="<https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Person/" +pk +">"
         sparql = SPARQLWrapper(dataset)
         sparql.setQuery("""
 
                         SELECT *
-                        From named <http://exploreat.adaptcentre.ie/Person_graph>
+                        From named <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Person_graph>
                         WHERE {
-                        Graph <http://exploreat.adaptcentre.ie/Person_graph> {""" +subj + """ ?p ?o}
+                        Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Person_graph> {""" +subj + """ ?p ?o}
                         } 
                      """)
         sparql.setReturnFormat(JSON)
@@ -411,15 +411,15 @@ class DetailedQuestionnaireViewLimit(APIView):
                         prefix xsd: <http://www.w3.org/2001/XMLSchema#>
                         SELECT *
 
-                        From named <http://exploreat.adaptcentre.ie/Questionnaire_graph>
+                        From named <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Questionnaire_graph>
                         WHERE {
-                                Graph <http://exploreat.adaptcentre.ie/Questionnaire_graph> {?s ?p ?o}.
+                                Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Questionnaire_graph> {?s ?p ?o}.
                                 {
                                     select distinct ?s{
-                                    Graph <http://exploreat.adaptcentre.ie/Questionnaire_graph> 
+                                    Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Questionnaire_graph> 
                                      {?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://explorations4u.acdh.oeaw.ac.at/ontology/oldcan#Questionnaire>}.
                                  }
-                                order by asc(xsd:integer(replace(str(replace(str(?s),"http://exploreat.adaptcentre.ie/Questionnaire/","")),">","")))
+                                order by asc(xsd:integer(replace(str(replace(str(?s),"https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Questionnaire/","")),">","")))
                                 Limit""" + str(limit)  + """
                                 OFFSET""" + str(offset) + """
                                 }  
@@ -444,15 +444,15 @@ class DetailedQuestionViewLimit(APIView):
                                 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
                                 SELECT *
 
-                                From named <http://exploreat.adaptcentre.ie/Question_graph>
+                                From named <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Question_graph>
                                 WHERE {
-                                        Graph <http://exploreat.adaptcentre.ie/Question_graph> {?s ?p ?o}.
+                                        Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Question_graph> {?s ?p ?o}.
                                         {
                                             select distinct ?s{
-                                            Graph <http://exploreat.adaptcentre.ie/Question_graph>
+                                            Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Question_graph>
                                              {?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://explorations4u.acdh.oeaw.ac.at/ontology/oldcan#Question>}.
                                          }
-                                        order by asc(xsd:integer(replace(str(replace(str(?s),"http://exploreat.adaptcentre.ie/Question/","")),">","")))
+                                        order by asc(xsd:integer(replace(str(replace(str(?s),"https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Question/","")),">","")))
                                         Limit""" + str(limit)  + """
                                         OFFSET""" + str(offset) + """
                                         }  
@@ -477,15 +477,15 @@ class DetailedPaperSlipRecordViewLimit(APIView):
                                 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
                                 SELECT *
 
-                                From named <http://exploreat.adaptcentre.ie/PaperSlipRecord_graph>
+                                From named <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//PaperSlipRecord_graph>
                                 WHERE {
-                                        Graph <http://exploreat.adaptcentre.ie/PaperSlipRecord_graph> {?s ?p ?o}.
+                                        Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//PaperSlipRecord_graph> {?s ?p ?o}.
                                         {
                                             select distinct ?s{
-                                            Graph <http://exploreat.adaptcentre.ie/PaperSlipRecord_graph> 
+                                            Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//PaperSlipRecord_graph> 
                                              {?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://explorations4u.acdh.oeaw.ac.at/ontology/oldcan#PaperSlipRecord>}.
                                          }
-                                        order by asc(xsd:integer(replace(str(replace(str(?s),"http://exploreat.adaptcentre.ie/PaperSlipRecord/","")),">","")))
+                                        order by asc(xsd:integer(replace(str(replace(str(?s),"https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//PaperSlipRecord/","")),">","")))
                                         Limit""" + str(limit) + """
                                         OFFSET""" + str(offset) + """
                                         }  
@@ -509,15 +509,15 @@ class DetailedLemmaViewLimit(APIView):
                                 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
                                 SELECT *
 
-                                From named <http://exploreat.adaptcentre.ie/Lemma_graph>
+                                From named <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Lemma_graph>
                                 WHERE {
-                                        Graph <http://exploreat.adaptcentre.ie/Lemma_graph> {?s ?p ?o}.
+                                        Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Lemma_graph> {?s ?p ?o}.
                                         {
                                             select distinct ?s{
-                                            Graph <http://exploreat.adaptcentre.ie/Lemma_graph>
+                                            Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Lemma_graph>
                                              {?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://explorations4u.acdh.oeaw.ac.at/ontology/oldcan#Lemma>}.   
                                          }
-                                        order by asc(xsd:integer(replace(str(replace(str(?s),"http://exploreat.adaptcentre.ie/Lemma/","")),">","")))
+                                        order by asc(xsd:integer(replace(str(replace(str(?s),"https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Lemma/","")),">","")))
                                         Limit""" + str(limit) + """
                                         OFFSET""" + str(offset) + """
                                         }  
@@ -541,15 +541,15 @@ class DetailedSourceViewLimit(APIView):
                                 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
                                 SELECT *
 
-                                From named <http://exploreat.adaptcentre.ie/Source_graph>
+                                From named <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Source_graph>
                                 WHERE {
-                                        Graph <http://exploreat.adaptcentre.ie/Source_graph> {?s ?p ?o}.
+                                        Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Source_graph> {?s ?p ?o}.
                                         {
                                             select distinct ?s{
-                                            Graph <http://exploreat.adaptcentre.ie/Source_graph>  
+                                            Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Source_graph>  
                                             {?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://explorations4u.acdh.oeaw.ac.at/ontology/oldcan#Source>}.
                                          }
-                                        order by asc(xsd:integer(replace(str(replace(str(?s),"http://exploreat.adaptcentre.ie/Source/","")),">","")))
+                                        order by asc(xsd:integer(replace(str(replace(str(?s),"https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Source/","")),">","")))
                                         Limit""" + str(limit)  + """
                                         OFFSET""" + str(offset) + """
                                         }  
@@ -574,15 +574,15 @@ class DetailedPaperSlipViewLimit(APIView):
                                 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
                                 SELECT *
 
-                                From named <http://exploreat.adaptcentre.ie/PaperSlip_graph>
+                                From named <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//PaperSlip_graph>
                                 WHERE {
-                                        Graph <http://exploreat.adaptcentre.ie/PaperSlip_graph> {?s ?p ?o}.
+                                        Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//PaperSlip_graph> {?s ?p ?o}.
                                         {
                                             select distinct ?s{
-                                            Graph <http://exploreat.adaptcentre.ie/PaperSlip_graph> 
+                                            Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//PaperSlip_graph> 
                                              {?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://explorations4u.acdh.oeaw.ac.at/ontology/oldcan#PaperSlip>}.
                                          }
-                                        order by asc(xsd:integer(replace(str(replace(str(?s),"http://exploreat.adaptcentre.ie/PaperSlip/","")),">","")))
+                                        order by asc(xsd:integer(replace(str(replace(str(?s),"https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//PaperSlip/","")),">","")))
                                         Limit""" + str(limit)  + """
                                         OFFSET""" + str(offset) + """
                                         }  
@@ -606,15 +606,15 @@ class DetailedMultimediaViewLimit(APIView):
                                 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
                                 SELECT *
 
-                                From named <http://exploreat.adaptcentre.ie/Multimedia_graph>
+                                From named <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Multimedia_graph>
                                 WHERE {
-                                        Graph <http://exploreat.adaptcentre.ie/Multimedia_graph> {?s ?p ?o}.
+                                        Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Multimedia_graph> {?s ?p ?o}.
                                         {
                                             select distinct ?s{
-                                            Graph <http://exploreat.adaptcentre.ie/Multimedia_graph> 
+                                            Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Multimedia_graph> 
                                              {?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://explorations4u.acdh.oeaw.ac.at/ontology/oldcan#Multimedia>}.
                                          }
-                                        order by asc(xsd:integer(replace(str(replace(str(?s),"http://exploreat.adaptcentre.ie/Multimedia/","")),">","")))
+                                        order by asc(xsd:integer(replace(str(replace(str(?s),"https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Multimedia/","")),">","")))
                                         Limit""" + str(limit)  + """
                                         OFFSET""" + str(offset) + """
                                         }  
@@ -638,16 +638,16 @@ class DetailedPersonViewLimit(APIView):
                                 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
                                 SELECT *
 
-                                From named <http://exploreat.adaptcentre.ie/Person_graph>
+                                From named <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Person_graph>
                                 WHERE {
-                                        Graph <http://exploreat.adaptcentre.ie/Person_graph> {?s ?p ?o}.
+                                        Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Person_graph> {?s ?p ?o}.
                                         {
                                             select distinct ?s{
-                                            Graph <http://exploreat.adaptcentre.ie/Person_graph>  
+                                            Graph <https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Person_graph>  
                                             {?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://explorations4u.acdh.oeaw.ac.at/ontology/oldcan#author>}.
 
                                          }
-                                        order by asc(xsd:integer(replace(str(replace(str(?s),"http://exploreat.adaptcentre.ie/Person/","")),">","")))
+                                        order by asc(xsd:integer(replace(str(replace(str(?s),"https://exploreat-questionnaireexplorer.hephaistos.arz.oeaw.ac.at//Person/","")),">","")))
                                         Limit""" + str(limit) + """
                                         OFFSET""" + str(offset) + """
                                         }  
