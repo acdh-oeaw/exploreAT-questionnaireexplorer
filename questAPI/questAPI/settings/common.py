@@ -128,10 +128,10 @@ USE_TZ = True
 # STATICFILES_DIRS = [join(BASE_DIR, 'static')]
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.abspath(os.path.join(BASE_DIR, "static")),
-]
+# STATIC_URL = '/static/'
+# STATICFILES_DIRS = [
+#     os.path.abspath(os.path.join(BASE_DIR, "static")),
+# ]
 STATIC_ROOT=os.path.join(BASE_DIR, '/questAPI/static')
 print("static_root", STATIC_ROOT)
 # STATIC_ROOT = 'staticfiles'
